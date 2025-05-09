@@ -1,0 +1,84 @@
+<!--
+    Cafe Website - Home Page
+    This is the main landing page for Café Nova website.
+    It includes the navigation menu, hero section, and featured items.
+-->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <!-- Meta tags for character encoding and responsive viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title and external resources -->
+    <title>Café Nova - Home Page</title>
+    <!-- CSS files -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts for typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <!-- JavaScript files -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <script src="js/utilities.js" defer></script>
+    <script src="js/ajax.js" defer></script>
+    <script src="js/index.js" defer></script>
+</head>
+<body>
+    <!-- Header placeholder - will be loaded from header.html -->
+    <div id="header-placeholder"></div>
+    
+    <!-- Main content area -->
+    <main>
+        <!-- Hero section with main call-to-action -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>The Most Delicious Form of Coffee</h1>
+                <p>We offer you a unique experience with carefully selected coffee beans and our expert baristas.</p>
+                <a href="menu.html" class="btn">Check out the menu</a>
+            </div>
+        </section>
+        <!-- Featured items section -->
+        <section class="container">
+            <h2 class="featured-title">Our featured flavors</h2>
+            <!-- Featured items grid -->
+            <div class="featured-grid">
+                <!-- Featured item 1: Caramel Latte -->
+                <div class="featured-item">
+                    <img src="images/latte2.jpg" alt="Latte">
+                    <div class="featured-content">
+                        <h3>Caramel Latte</h3>
+                        <p class="featured-description">Special caramel sauce prepared latte</p>
+                        <span class="featured-price">$ 5.99</span>
+                    </div>
+                </div>
+                <!-- Featured item 2: Strawberry Cheesecake -->
+                <div class="featured-item">
+                    <img src="images/cheesecake.jpg" alt="Cheesecake">
+                    <div class="featured-content">
+                        <h3>Strawberry Cheesecake</h3>
+                        <p class="featured-description">Fresh homemade cheesecake with strawberry topping</p>
+                        <span class="featured-price">$ 13.99</span>
+                    </div>
+                </div>
+                <!-- Featured item 3: White Chocolate Mocha -->
+                <div class="featured-item">
+                    <img src="images/mocha3.jpg" alt="White Chocolate Mocha">
+                    <div class="featured-content">
+                        <h3>White Chocolate Mocha</h3>
+                        <p class="featured-description">Special white chocolate sauce with whipped cream</p>
+                        <span class="featured-price">$ 6.99</span>
+                    </div>
+                </div>
+                <!-- Order button -->
+                <a href="order.html" class="order-btn">Order Now</a>
+            </div>
+        </section>
+        
+        <!-- Specials section (discounts) -->
+        <section class="specials-section-wrapper">
+            <div id="daily-specials"></div>
+        </section>
+    </main>
+
+    <!-- Footer placeholder - will be loaded from footer.html -->
+    <div id="footer-placeholder"></div>
+</body>
+</html>
