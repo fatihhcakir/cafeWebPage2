@@ -1,0 +1,122 @@
+<!--
+    Cafe Website - Order Page
+    This page allows customers to place orders online with delivery date selection.
+-->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <!-- Meta tags for character encoding and responsive viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title and external resources -->
+    <title>Café Nova - Order</title>
+    <!-- CSS files -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- jQuery UI CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!-- Google Fonts for typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <!-- JavaScript files -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="js/utilities.js" defer></script>
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Order page specific JavaScript -->
+    <script src="js/order.js" defer></script>
+</head>
+<body>
+    <!-- Header placeholder - will be loaded from header.html -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main content area -->
+    <main>
+        <div class="container">
+            <h1>Place Your Order</h1>
+            <div class="order-container">
+                <!-- Step 1: Product selection and cart -->
+                <div id="order-step-products" class="order-section">
+                    <div class="section-header">
+                        <h2>Step 1: Select Products</h2>
+                    </div>
+                    <div class="order-content">
+                        <div class="search-box">
+                            <div class="form-group">
+                                <label for="productSearch">Search Products</label>
+                                <input type="text" id="productSearch" placeholder="Type to search products...">
+                            </div>
+                        </div>
+                        <div class="order-grid">
+                            <div class="menu-section">
+                                <div id="order-menu-tabs"></div>
+                            </div>
+                            <div class="cart-section">
+                                <div class="order-summary-box">
+                                    <h3>Your Order</h3>
+                                    <div id="orderSummary">
+                                        <ul id="orderItems"></ul>
+                                        <div class="order-total">
+                                            <span>Total:</span>
+                                            <span id="orderTotal">$0.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button id="continueToUserInfo" class="btn btn-primary">Continue to Checkout</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: User info form -->
+                <form id="orderForm" class="order-section" style="display:none;">
+                    <div class="section-header">
+                        <h2>Step 2: Delivery Information</h2>
+                    </div>
+                    <div class="order-content">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="deliveryDate">Delivery Date</label>
+                                <input type="text" id="deliveryDate" name="deliveryDate" required>
+                            </div>
+                        </div>
+                        <!-- Hidden fields for EmailJS -->
+                        <input type="hidden" id="to_email" name="to_email" value="cafenero20@gmail.com">
+                        <input type="hidden" id="to_name" name="to_name" value="Café Nova">
+                        <input type="hidden" id="subject" name="subject" value="New Order Submission">
+                        <input type="hidden" id="order_details" name="order_details" value="">
+                        <input type="hidden" id="order_total" name="order_total" value="">
+                        <!-- Form response area -->
+                        <div id="orderResponse"></div>
+                        <div class="form-actions">
+                            <button type="button" id="backToProducts" class="btn btn-secondary">Back to Products</button>
+                            <button type="submit" class="btn btn-primary">Place Order</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Order Confirmation Dialog -->
+        <div id="orderDialog" title="Order Status" style="display: none;">
+            <p><i class="fas fa-check-circle" style="color: #28a745; margin-right: 10px;"></i> <span id="dialogMessage"></span></p>
+            <div id="orderDetails"></div>
+        </div>
+
+    </main>
+
+    <!-- Footer placeholder - will be loaded from footer.html -->
+    <div id="footer-placeholder"></div>
+</body>
+</html> 
